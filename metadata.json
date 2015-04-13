@@ -1,12 +1,12 @@
 {
   "author": "Antoine Cotten",
-  "license": "Apache License, Version 2.0",
+  "license": "Apache-2.0",
   "name": "aco-ulyaoth",
-  "project_page": "https://github.com/tOnI0/aco-ulyaoth",
-  "source": "git://github.com/tOnI0/aco-ulyaoth.git",
+  "project_page": "https://github.com/antoineco/aco-ulyaoth",
+  "source": "git://github.com/antoineco/aco-ulyaoth.git",
   "summary": "Puppet module for Ulyaoth YUM repository",
-  "version": "1.0.0",
-  "tags": ["yum","tomcat","nginx","fedora","rhel","repo","repository"],
+  "version": "1.0.1",
+  "tags": ["yum","tomcat","nginx","logstash-forwarder","kibana","rpm","repository"],
   "dependencies": [],
   "operatingsystem_support": [
     {
@@ -42,7 +42,8 @@
       "operatingsystemrelease": [
         "19",
         "20",
-        "21"
+        "21",
+        "22"
       ]
     }
   ],

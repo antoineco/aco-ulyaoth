@@ -14,7 +14,7 @@ The ulyaoth module installs the Ulyaoth YUM repository on all [RHEL variants](ht
 
 ##Module description
 
-The [Ulyaoth](https://community.ulyaoth.net/threads/ulyaoth-repositories.3/) repository contains up-to-date versions of some popular server programs such as Tomcat and Nginx, packaged in the RPM-format. For a list of the available packages, please check the [project's GitHub](https://github.com/sbagmeijer/ulyaoth/tree/master/Repository) and the dedicated [community forums](https://community.ulyaoth.net/forums/repository/).
+The [Ulyaoth](https://community.ulyaoth.net/threads/ulyaoth-repositories.3/) repository contains up-to-date versions of some popular server programs such as Tomcat and Nginx, as well as other tools like Logstash-Forwarder and Kibana, packaged in the RPM-format. For a list of available packages please check the [project's GitHub](https://github.com/sbagmeijer/ulyaoth/tree/master/Repository) and the dedicated [community forums](https://community.ulyaoth.net/forums/repository/).
 
 This module is suitable for systems which use the YUM package manager, ie. RHEL variants, and for the x86_64 architecture only.
 
@@ -52,11 +52,11 @@ Primary class and entry point of the module.
 
 #####`gpgcheck`
 
-Switch to perform or not GPG signature checks on repository packages. Defaults to '1'
+Switch to perform or not GPG signature checks on repository packages. Defaults to `1`
 
 #####`enable`
 
-Enable repository. Defaults to '1'
+Enable repository. Defaults to `1`
 
 ##Credits
 
