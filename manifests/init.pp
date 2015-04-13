@@ -35,7 +35,7 @@ class ulyaoth ($gpgcheck = 1, $enable = 1) {
     # install YUM repositories
     yumrepo { 'ulyaoth':
       descr    => 'Ulyaoth Repository',
-      baseurl  => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/",
+      baseurl  => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/os/",
       enabled  => $enable,
       gpgcheck => $gpgcheck,
       gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ulyaoth'
