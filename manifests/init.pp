@@ -24,21 +24,30 @@
 #   enable   => '1'
 #}
 #
-class ulyaoth ($gpgcheck = 1, $enable = 1) {
-  if ($::osfamily == 'RedHat') and ($::architecture == 'x86_64') {
+class ulyaoth ($gpgcheck = 1, $enable = 1, $enable_debug = 0) {
+  if $::osfamily == 'RedHat' {
     # define OS string
     $ostype = $::operatingsystem ? {
-      'Fedora' => 'Fedora',
-      default  => 'RHEL'
+      'RedHat' => 'RHEL',
+      default  => $::operatingsystem
     }
 
     # install YUM repositories
-    yumrepo { 'ulyaoth':
-      descr    => 'Ulyaoth Repository',
-      baseurl  => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/os/",
-      enabled  => $enable,
+    Yumrepo {
       gpgcheck => $gpgcheck,
       gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ulyaoth'
+    }
+
+    yumrepo {
+      'ulyaoth':
+        descr    => 'Ulyaoth Repository',
+        baseurl  => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/os/",
+        enabled  => $enable;
+
+      'ulyaoth-debug':
+        descr    => 'Ulyaoth Repository (debug)',
+        baseurl  => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/debug/",
+        enabled  => $enable_debug
     }
 
     # install GPG key
