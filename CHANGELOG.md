@@ -1,3 +1,9 @@
+###1.1.0
+
+* More supported OSes 
+* Debug repo
+* 32bit support
+
 ###1.0.1
 
 * Update repo URL and GPG key

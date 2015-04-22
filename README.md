@@ -58,6 +58,10 @@ Switch to perform or not GPG signature checks on repository packages. Defaults t
 
 Enable repository. Defaults to `1`
 
+#####`enable_debug`
+
+Enable debug repository. Defaults to `0`
+
 ##Credits
 
 The `rpm_gpg_key` defined type was reused from the ['epel' module by Michael Stahnke](https://forge.puppetlabs.com/stahnma/epel) (stahnma).  

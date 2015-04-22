@@ -40,14 +40,14 @@ class ulyaoth ($gpgcheck = 1, $enable = 1, $enable_debug = 0) {
 
     yumrepo {
       'ulyaoth':
-        descr    => 'Ulyaoth Repository',
-        baseurl  => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/os/",
-        enabled  => $enable;
+        descr   => 'Ulyaoth Repository',
+        baseurl => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/os/",
+        enabled => $enable;
 
       'ulyaoth-debug':
-        descr    => 'Ulyaoth Repository (debug)',
-        baseurl  => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/debug/",
-        enabled  => $enable_debug
+        descr   => 'Ulyaoth Repository (debug)',
+        baseurl => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/debug/",
+        enabled => $enable_debug
     }
 
     # install GPG key
