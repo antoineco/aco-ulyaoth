@@ -1,3 +1,7 @@
+###1.1.1
+
+Add newline to PGP key, fixes import issues with recent rpm versions
+
 ###1.1.0
 
 * More supported OSes 
