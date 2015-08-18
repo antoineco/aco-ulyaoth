@@ -1,6 +1,6 @@
-###1.1.1
+###1.1.2
 
-Add newline to PGP key, fixes import issues with recent rpm versions
+New PGP key, fixes import issues. Mandatory to use new packages from the repo
 
 ###1.1.0
 
