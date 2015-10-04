@@ -24,7 +24,7 @@
 #   enable   => '1'
 #}
 #
-class ulyaoth ($gpgcheck = 1, $enable = 1, $enable_debug = 0) {
+class ulyaoth ($gpgcheck = 1, $enable = 1, $enable_debug = 0, $enable_source = 0) {
   if $::osfamily == 'RedHat' {
     # define OS string
     $ostype = $::operatingsystem ? {
@@ -48,6 +48,11 @@ class ulyaoth ($gpgcheck = 1, $enable = 1, $enable_debug = 0) {
         descr   => 'Ulyaoth Repository (debug)',
         baseurl => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/debug/",
         enabled => $enable_debug
+
+      'ulyaoth-source':
+        descr   => 'Ulyaoth Repository (source)',
+        baseurl => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/source/",
+        enabled => $enable_source
     }
 
     # install GPG key
