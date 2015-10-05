@@ -62,6 +62,10 @@ Enable repository. Defaults to `1`
 
 Enable debug repository. Defaults to `0`
 
+#####`enable_source`
+
+Enable sourse repository. Defaults to `0`
+
 ##Credits
 
 The `rpm_gpg_key` defined type was reused from the ['epel' module by Michael Stahnke](https://forge.puppetlabs.com/stahnma/epel) (stahnma).  

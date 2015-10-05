@@ -1,6 +1,6 @@
 # === Class: ulyaoth
 #
-# This module installs the Ulyaoth YUM repository and its dependencies on RHEL-variants
+# This module installs the Ulyaoth YUM repository and its dependencies
 #
 # == Parameters
 #
@@ -24,7 +24,11 @@
 #   enable   => '1'
 #}
 #
-class ulyaoth ($gpgcheck = 1, $enable = 1, $enable_debug = 0, $enable_source = 0) {
+class ulyaoth (
+  $gpgcheck      = 1,
+  $enable        = 1,
+  $enable_debug  = 0,
+  $enable_source = 0) {
   if $::osfamily == 'RedHat' {
     # define OS string
     $ostype = $::operatingsystem ? {
@@ -47,7 +51,7 @@ class ulyaoth ($gpgcheck = 1, $enable = 1, $enable_debug = 0, $enable_source = 0
       'ulyaoth-debug':
         descr   => 'Ulyaoth Repository (debug)',
         baseurl => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/debug/",
-        enabled => $enable_debug
+        enabled => $enable_debug;
 
       'ulyaoth-source':
         descr   => 'Ulyaoth Repository (source)',
@@ -64,7 +68,9 @@ class ulyaoth ($gpgcheck = 1, $enable = 1, $enable_debug = 0, $enable_source = 0
       source => "puppet:///modules/${module_name}/RPM-GPG-KEY-ulyaoth",
     }
 
-    ulyaoth::rpm_gpg_key { 'Ulyaoth GPG key': path => '/etc/pki/rpm-gpg/RPM-GPG-KEY-ulyaoth' }
+    ulyaoth::rpm_gpg_key { 'Ulyaoth GPG key':
+      path => '/etc/pki/rpm-gpg/RPM-GPG-KEY-ulyaoth'
+    }
   } else {
     fail("Unsupported operating system family ${::osfamily}")
   }

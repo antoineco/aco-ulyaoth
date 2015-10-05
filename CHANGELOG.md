@@ -1,3 +1,8 @@
+###1.1.3
+
+* Add source repository
+* Update external links in documentation
+
 ###1.1.2
 
 New PGP key, fixes import issues. Mandatory to use new packages from the repo
