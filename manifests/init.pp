@@ -4,10 +4,20 @@
 #
 # == Parameters
 #
-# $gpgcheck:
+# [*gpgcheck*]
 #   enable or disable GPG signature check (valid: '0'|'1')
-# $enable:
+# [*enable*]
 #   enable or disable the repository (valid: '0'|'1')
+# [*enable_debug*]
+#   enable or disable the debug repository (valid: '0'|'1')
+# [*enable_source*]
+#   enable or disable the source repository (valid: '0'|'1')
+# [*proxy*]
+#   url of a proxy server that yum should use when accessing these repositories
+# [*proxy_username*]
+#   user name for the proxy
+# [*proxy_password*]
+#   password for the proxy
 #
 # === Actions
 #
@@ -25,21 +35,28 @@
 #}
 #
 class ulyaoth (
-  $gpgcheck      = 1,
-  $enable        = 1,
-  $enable_debug  = 0,
-  $enable_source = 0) {
+  $gpgcheck       = 1,
+  $enable         = 1,
+  $enable_debug   = 0,
+  $enable_source  = 0,
+  $proxy          = absent,
+  $proxy_username = absent,
+  $proxy_password = absent) {
   if $::osfamily == 'RedHat' {
     # define OS string
     $ostype = $::operatingsystem ? {
-      'RedHat' => 'RHEL',
-      default  => $::operatingsystem
+      'Scientific' => 'scientificlinux',
+      'Amazon'     => 'amazonlinux',
+      default      => $::operatingsystem
     }
 
     # install YUM repositories
     Yumrepo {
-      gpgcheck => $gpgcheck,
-      gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ulyaoth'
+      gpgcheck       => $gpgcheck,
+      gpgkey         => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ulyaoth',
+      proxy          => $proxy,
+      proxy_username => $proxy_username,
+      proxy_password => $proxy_password
     }
 
     yumrepo {
@@ -49,12 +66,12 @@ class ulyaoth (
         enabled => $enable;
 
       'ulyaoth-debug':
-        descr   => 'Ulyaoth Repository (debug)',
+        descr   => 'Ulyaoth Repository (Debug)',
         baseurl => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/debug/",
         enabled => $enable_debug;
 
       'ulyaoth-source':
-        descr   => 'Ulyaoth Repository (source)',
+        descr   => 'Ulyaoth Repository (Source)',
         baseurl => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/source/",
         enabled => $enable_source
     }
