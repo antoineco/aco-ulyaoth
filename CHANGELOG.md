@@ -1,3 +1,12 @@
+###1.1.4
+
+* New proxy parameters:
+ - `proxy`
+ - `proxy_username`
+ - `proxy_password`
+* Fix wrong repository URL on RedHat and Scientific Linux
+* Support Amazon Linux
+
 ###1.1.3
 
 * Add source repository
