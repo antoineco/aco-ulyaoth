@@ -62,17 +62,17 @@ class ulyaoth (
     yumrepo {
       'ulyaoth':
         descr   => 'Ulyaoth Repository',
-        baseurl => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/os/",
+        baseurl => "https://repos.ulyaoth.io/${ostype}/\$releasever/\$basearch/os/",
         enabled => $enable;
 
       'ulyaoth-debug':
         descr   => 'Ulyaoth Repository (Debug)',
-        baseurl => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/debug/",
+        baseurl => "https://repos.ulyaoth.io/${ostype}/\$releasever/\$basearch/debug/",
         enabled => $enable_debug;
 
       'ulyaoth-source':
         descr   => 'Ulyaoth Repository (Source)',
-        baseurl => "https://repos.ulyaoth.net/${ostype}/\$releasever/\$basearch/source/",
+        baseurl => "https://repos.ulyaoth.io/${ostype}/\$releasever/\$basearch/source/",
         enabled => $enable_source
     }
 
