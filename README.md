@@ -11,11 +11,11 @@
 
 ##Overview
 
-The ulyaoth module installs the Ulyaoth YUM repository on all [RHEL variants](http://en.wikipedia.org/wiki/List_of_Linux_distributions#RHEL-based) including Fedora.
+The ulyaoth module installs the Ulyaoth YUM repository on all [RHEL variants](http://en.wikipedia.org/wiki/List_of_Linux_distributions#RHEL-based) including Fedora and Amazon Linux.
 
 ##Module description
 
-The [Ulyaoth](https://www.ulyaoth.net/repository.html) repository contains up-to-date versions of some popular server programs such as Tomcat and Nginx, as well as other tools like Logstash and Kibana, packaged in the RPM-format. For a list of available packages please check the project's page and [GitHub repository](https://github.com/ulyaoth/repository).
+The [Ulyaoth](https://www.ulyaoth.net/) repository contains up-to-date versions of some popular server programs such as Tomcat and Nginx, as well as other tools like Logstash and Kibana, packaged in the RPM-format. For a list of available packages please check the project's page and [GitHub repository](https://github.com/ulyaoth/repository).
 
 This module is suitable for systems which use the YUM/DNF package manager, ie. RHEL variants, and for the x86_64 architecture only.
 
@@ -75,6 +75,6 @@ Password for the proxy server.
 ##Credits
 
 The `rpm_gpg_key` defined type was reused from the ['epel' module by Michael Stahnke](https://forge.puppet.com/stahnma/epel) (stahnma).  
-The repository is maintained by [Sjir Bagmeijer](https://github.com/sbagmeijer).
+The repository is maintained by [Ulyaoth Laboratories](https://github.com/ulyaoth).
 
 Features request and contributions are always welcome!

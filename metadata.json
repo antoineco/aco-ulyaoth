@@ -5,7 +5,7 @@
   "project_page": "https://github.com/antoineco/aco-ulyaoth",
   "source": "git://github.com/antoineco/aco-ulyaoth.git",
   "summary": "Puppet module for Ulyaoth YUM repository",
-  "version": "1.1.4",
+  "version": "2.0.0",
   "tags": ["yum","tomcat","nginx","logstash","kibana","rpm","repository"],
   "dependencies": [],
   "operatingsystem_support": [

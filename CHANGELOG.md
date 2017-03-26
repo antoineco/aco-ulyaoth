@@ -1,3 +1,7 @@
+###2.0.0
+* Repository url has been changed to repos.ulyaoth.io.
+* Now using a cdn to distribute the packages.
+
 ###1.1.4
 
 * New proxy parameters:
